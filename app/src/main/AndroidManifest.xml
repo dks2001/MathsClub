@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dheerendrakumar.mathsclub">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MathsClub">
+        <activity android:name=".ActivityFillBlanks"></activity>
+        <activity android:name=".ActivityChallengeFriend" />
+        <activity android:name=".ActivityAscendingDescending" />
+        <activity android:name=".ActivityGetSum" />
+        <activity android:name=".ActivityRightWrong" />
+        <activity android:name=".ActivityFindx" />
+        <activity android:name=".ActivityMaxMin" />
+        <activity android:name=".GreaterSmaller" />
+        <activity android:name=".ActivityGameZone" />
+        <activity android:name=".ActivityTable" />
+        <activity android:name=".ActivityASM" />
+        <activity android:name=".ActivityMultiply" />
+        <activity android:name=".ActivitySubtract" />
+        <activity android:name=".ActivityAddition" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
