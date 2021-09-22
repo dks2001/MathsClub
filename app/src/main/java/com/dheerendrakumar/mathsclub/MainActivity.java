@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button table = findViewById(R.id.getTable);
+        Button table = findViewById(R.id.reasoning);
         table.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ActivityTable.class);
+                Intent intent = new Intent(MainActivity.this,ActivityReasoning.class);
                 startActivity(intent);
             }
         });

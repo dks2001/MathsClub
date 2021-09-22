@@ -103,7 +103,7 @@
                 android:text="game zone" />
 
             <Button
-                android:id="@+id/getTable"
+                android:id="@+id/reasoning"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="10dp"
@@ -113,7 +113,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="50"
                 android:background="@drawable/round_the_corner"
-                android:text="table of ?" />
+                android:text="Reasoning" />
 
         </LinearLayout>
 

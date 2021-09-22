@@ -85,5 +85,14 @@ public class ActivityGameZone extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView equation = findViewById(R.id.equation);
+        equation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityGameZone.this,ActivityEquation.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -9,7 +9,6 @@
     android:layout_height="match_parent"
     tools:context=".ActivityGameZone">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,7 +24,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -59,7 +58,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
 
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -76,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Missing your x? Find here."
+                    android:text="find the value"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"
@@ -92,7 +91,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -125,7 +124,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -158,14 +157,14 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/fillblanks"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/root"
+                    android:src="@drawable/fill"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
@@ -175,7 +174,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="Fill in the boxes"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"
@@ -192,7 +191,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -228,7 +227,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -247,7 +246,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Challenge your friend."
+                    android:text="What's next in the sequence"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"
@@ -263,7 +262,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/linear_layout_corner"
+                android:background="@drawable/round_the_corner"
                 android:orientation="vertical">
 
                 <ImageView
@@ -283,6 +282,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Arrange in given order."
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_the_corner"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/equation"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:src="@drawable/findx"
+                    android:layout_marginStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/imageview_bg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Find x"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"

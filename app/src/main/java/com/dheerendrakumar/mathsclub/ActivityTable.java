@@ -23,7 +23,7 @@ public class ActivityTable extends AppCompatActivity {
         setContentView(R.layout.activity_table);
 
         EditText tableOf = findViewById(R.id.tableOf);
-        Button getTable = findViewById(R.id.getTable);
+        Button getTable = findViewById(R.id.reasoning);
         listView = findViewById(R.id.table);
 
 
