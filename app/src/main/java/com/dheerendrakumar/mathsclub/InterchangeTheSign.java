@@ -1,12 +1,19 @@
 package com.dheerendrakumar.mathsclub;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +33,6 @@ public class InterchangeTheSign extends AppCompatActivity {
     int numberOfQuestions = 10;
     TextView scoreTextView;
     TextView sumTextView;
-    TextView timerTextView;
     LinearLayout gameLayout;
     int correctAnswer=0;
     Button playAgainButton;
@@ -35,6 +41,8 @@ public class InterchangeTheSign extends AppCompatActivity {
     Button val2;
     Button val3;
     Button val4;
+    SharedPreferences sharedPreferences;
+    int s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +51,6 @@ public class InterchangeTheSign extends AppCompatActivity {
 
         sumTextView = findViewById(R.id.questiontxt);
         scoreTextView = findViewById(R.id.scoreTextView);
-        timerTextView = findViewById(R.id.timerTextView);
         gameLayout = findViewById(R.id.gameLayout);
         goButton = findViewById(R.id.goButton);
         playAgainButton = findViewById(R.id.playAgainButton);
@@ -54,6 +61,10 @@ public class InterchangeTheSign extends AppCompatActivity {
 
         goButton.setVisibility(View.VISIBLE);
         gameLayout.setVisibility(View.INVISIBLE);
+
+        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+        s = sharedPreferences.getInt("rs",0);
+
 
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,22 +85,8 @@ public class InterchangeTheSign extends AppCompatActivity {
         val4.setEnabled(true);
 
         playAgainButton.setVisibility(View.INVISIBLE);
-        timerTextView.setText("30s");
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
         newQuestion();
-
-        new CountDownTimer(30100,1000) {
-
-            @Override
-            public void onTick(long l) {
-                timerTextView.setText(String.valueOf(l / 1000) + "s");
-            }
-
-            @Override
-            public void onFinish() {
-                //playAgainButton.setVisibility(View.VISIBLE);
-            }
-        }.start();
     }
 
     public void chooseAnswer(View view) {
@@ -111,6 +108,11 @@ public class InterchangeTheSign extends AppCompatActivity {
             val2.setEnabled(false);
             val3.setEnabled(false);
             val4.setEnabled(false);
+
+            sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+            sharedPreferences.edit().putInt("rs",score+s).apply();
+            popup(button);
+
         } else {
 
             if(String.valueOf(correctAnswer).equals(button.getText().toString())) {
@@ -199,6 +201,47 @@ public class InterchangeTheSign extends AppCompatActivity {
         val3.setText(answers.get(2)+"");
         val4.setText(answers.get(3)+"");
 
+    }
+
+    public  void popup(View view) {
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = layoutInflater.inflate(R.layout.inflator, null);
+                int width = LinearLayout.LayoutParams.MATCH_PARENT;
+                int height = LinearLayout.LayoutParams.MATCH_PARENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                TextView time = (TextView) popupView.findViewById(R.id.time);
+                time.setVisibility(View.GONE);
+                TextView question = (TextView) popupView.findViewById(R.id.totalQues);
+                question.setText("Total Questions: "+numberOfQuestions+"");
+                TextView correct = (TextView) popupView.findViewById(R.id.corrrect);
+                correct.setText("Correct: "+score+"");
+                TextView incorrect = (TextView) popupView.findViewById(R.id.incorrect);
+                int ic = numberOfQuestions-score;
+                incorrect.setText("Incorrect: "+ic+"");
+
+                popupWindow.showAtLocation(findViewById(R.id.ml), Gravity.CENTER, 0, 0);
+
+                Button finish = (Button) popupView.findViewById(R.id.finish);
+                finish.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                        finish();
+                        Intent intent = new Intent(InterchangeTheSign.this,ActivityReasoning.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+            }
+        },1000);
 
     }
+
 }

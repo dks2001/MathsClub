@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MathsClub">
-        <activity android:name=".InterchangeTheSign"></activity>
+        <activity android:name=".ActivityScore"></activity>
+        <activity android:name=".WarmUp" />
+        <activity android:name=".UseFormula" />
+        <activity android:name=".InterchangeTheSign" />
         <activity android:name=".InterchangeSign" />
         <activity android:name=".IdentifyAndCompute" />
         <activity android:name=".FindMissingX" />

@@ -2,7 +2,6 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.drm.DrmStore;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,27 +24,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class ActivityRightWrong extends AppCompatActivity {
+public class UseFormula extends AppCompatActivity {
 
-    String[] signs = {"+","-","*"};
+    String[] formulas = {"lb+bh+hl","lbh","a^2+b^2","l(b+h)"};
 
-    Button goButton;
-    int r;
     ArrayList<Integer> answers = new ArrayList<>();
-    int locationOfCorrectAnswer;
-    int answerShowed;
+    Button goButton;
+    Button playAgainButton;
     int score = 0;
     int numberOfQuestions = 0;
     TextView scoreTextView;
-    ImageView right;
-    ImageView wrong;
-    TextView sumTextView;
     TextView timerTextView;
-    Button playAgainButton;
     LinearLayout gameLayout;
+
+    Button val1;
+    Button val2;
+    Button val3;
+    Button val4;
+    TextView values;
+    TextView formula;
+    CountDownTimer countDownTimer;
+    String answer = "";
     EditText timeEdt;
     String t = "60100";
-    CountDownTimer countDownTimer;
     int i=0;
     SharedPreferences sharedPreferences;
     int s;
@@ -53,24 +54,26 @@ public class ActivityRightWrong extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_right_wrong);
+        setContentView(R.layout.activity_use_formula);
 
-        sumTextView = findViewById(R.id.expressionRightWrong);
-        right = findViewById(R.id.rightImageView);
-        wrong = findViewById(R.id.wrongImageView);
         scoreTextView = findViewById(R.id.scoreTextView);
         timerTextView = findViewById(R.id.timerTextView);
-        playAgainButton = findViewById(R.id.playAgainButton);
         gameLayout = findViewById(R.id.gameLayout);
         goButton = findViewById(R.id.goButton);
+        val1 = findViewById(R.id.val1);
+        val2 = findViewById(R.id.val2);
+        val3 = findViewById(R.id.val3);
+        val4 = findViewById(R.id.val4);
+        values = findViewById(R.id.values);
+        formula = findViewById(R.id.formula);
+        playAgainButton = findViewById(R.id.playAgainButton);
         timeEdt = findViewById(R.id.timeEdt);
         timeEdt.setVisibility(View.VISIBLE);
+        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+        s = sharedPreferences.getInt("wus",0);
 
         goButton.setVisibility(View.VISIBLE);
         gameLayout.setVisibility(View.INVISIBLE);
-
-        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-        s = sharedPreferences.getInt("gzs",0);
 
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +81,7 @@ public class ActivityRightWrong extends AppCompatActivity {
                 if(!timeEdt.getText().toString().equals("")) {
 
                     if(Integer.parseInt(timeEdt.getText().toString()) > 200) {
-                        Toast.makeText(ActivityRightWrong.this, "Maximum time 3 minutes", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UseFormula.this, "Maximum time 3 minutes", Toast.LENGTH_SHORT).show();
                     } else {
                         t = timeEdt.getText().toString()+"100";
                         start(goButton);
@@ -97,11 +100,13 @@ public class ActivityRightWrong extends AppCompatActivity {
         score = 0;
         numberOfQuestions = 0;
         timerTextView.setText("30s");
+        playAgainButton.setVisibility(View.INVISIBLE);
+        val1.setEnabled(true);
+        val2.setEnabled(true);
+        val3.setEnabled(true);
+        val4.setEnabled(true);
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
         newQuestion();
-        playAgainButton.setVisibility(View.INVISIBLE);
-        right.setEnabled(true);
-        wrong.setEnabled(true);
 
         countDownTimer = new CountDownTimer(Integer.parseInt(t),1000) {
 
@@ -115,7 +120,7 @@ public class ActivityRightWrong extends AppCompatActivity {
             public void onFinish() {
 
                 sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-                sharedPreferences.edit().putInt("gzs",score+s).apply();
+                sharedPreferences.edit().putInt("wus",score+s).apply();
 
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
@@ -145,8 +150,7 @@ public class ActivityRightWrong extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-
-                                Intent intent = new Intent(ActivityRightWrong.this,ActivityGameZone.class);
+                                Intent intent = new Intent(UseFormula.this,WarmUp.class);
                                 startActivity(intent);
                             }
                         });
@@ -160,12 +164,11 @@ public class ActivityRightWrong extends AppCompatActivity {
     }
 
     public void chooseAnswer(View view) {
-        if (r==1 && view.getTag().toString().equals("true")) {
-            score++;
-        } else if(r==0 && view.getTag().toString().equals("false")){
-            score++;
-        } else {
 
+        Button button = (Button)view;
+
+        if (answer.equals(button.getText().toString())) {
+            score++;
         }
         numberOfQuestions++;
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
@@ -173,6 +176,7 @@ public class ActivityRightWrong extends AppCompatActivity {
     }
 
     public void start(View view) {
+
         goButton.setVisibility(View.INVISIBLE);
         timeEdt.setVisibility(View.INVISIBLE);
         gameLayout.setVisibility(View.VISIBLE);
@@ -180,52 +184,83 @@ public class ActivityRightWrong extends AppCompatActivity {
     }
 
     public void newQuestion() {
-        Random rand = new Random();
 
-        int a = rand.nextInt(50);
-        int b = rand.nextInt(50);
-        int c = rand.nextInt(3);
-
-        String radSign = signs[c];
-        r=0;
-
-
-        locationOfCorrectAnswer = rand.nextInt(2);
-        answerShowed = rand.nextInt(2);
+        answer = "";
+        answers.clear();
         int ans=0;
 
-        answers.clear();
+        Random rand = new Random();
+        int a = rand.nextInt(4);
 
-        for (int i=0; i<2; i++) {
-            if (i == locationOfCorrectAnswer) {
-                if(radSign.equals("+")) {
-                    ans = a+b;
-                } else if(radSign.equals("*")) {
-                    ans = a*b;
-                } else {
-                    ans = a-b;
-                }
-                answers.add(ans);
-            } else {
-                int wrongAnswer = rand.nextInt(41);
+        if(a==0) {
 
-                while (wrongAnswer == ans) {
-                    wrongAnswer = rand.nextInt(41);
-                }
+            int l = rand.nextInt(10)+1;
+            int b = rand.nextInt(10)+1;
+            int h = rand.nextInt(10)+1;
 
-                answers.add(wrongAnswer);
+            formula.setText("Answer = "+formulas[0]+"");
+            values.setText("l = "+l+"\n"+"b = "+b+"\n"+"h = "+h);
+            ans = l*b+b*h+h*l;
+            answer = ans+"";
+            answers.add(ans);
+
+        } else if(a==1) {
+
+            int l = rand.nextInt(10)+1;
+            int b = rand.nextInt(10)+1;
+            int h = rand.nextInt(10)+1;
+
+            formula.setText("Answer = "+formulas[1]+"");
+            values.setText("l = "+l+"\n"+"b = "+b+"\n"+"h = "+h);
+
+            ans = l*b*h;
+            answer = ans+"";
+            answers.add(ans);
+
+        } else if(a==2) {
+
+            int c = rand.nextInt(10)+1;
+            int b = rand.nextInt(10)+1;
+
+            formula.setText("Answer = "+formulas[2]+"");
+            values.setText("a = "+c+"\n"+"b = "+b);
+            ans = c*c + b*b;
+            answer = ans+"";
+            answers.add(ans);
+
+        } else if(a==3) {
+
+            int l = rand.nextInt(10)+1;
+            int b = rand.nextInt(10)+1;
+            int h = rand.nextInt(10)+1;
+
+            formula.setText("Answer = "+formulas[3]+"");
+            values.setText("l = "+l+"\n"+"b = "+b+"\n"+"h = "+h);
+
+            ans = l*(b+h);
+            answer = ans+"";
+            answers.add(ans);
+
+
+        }
+
+
+
+        for(int i=0;i<3;i++) {
+            int m = rand.nextInt(ans)+20;
+            while(answers.contains(m)) {
+                m = rand.nextInt(ans)+20;
             }
-
+            answers.add(m);
         }
 
         Collections.shuffle(answers);
-        if(answers.get(answerShowed)==ans) {
-            r=1;
-        }
-
-        sumTextView.setText(Integer.toString(a) + " "+radSign+" " + Integer.toString(b) +" = " +answers.get(answerShowed));
 
 
+        val1.setText(Integer.toString(answers.get(0)));
+        val2.setText(Integer.toString(answers.get(1)));
+        val3.setText(Integer.toString(answers.get(2)));
+        val4.setText(Integer.toString(answers.get(3)));
     }
 
     @Override

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".WarmUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Score : 120"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="textEnd"
+            android:text="Reset"
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/imageview_bg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/addition"/>
+
+        <Button
+            android:id="@+id/addition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_weight="80"
+            android:background="@drawable/round_the_corner"
+            android:text="Addition" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/imageview_bg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sub"/>
+
+        <Button
+            android:id="@+id/subtraction"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="80"
+            android:background="@drawable/round_the_corner"
+            android:text="Subtraction" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/imageview_bg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/multiply"/>
+
+        <Button
+            android:id="@+id/multiplication"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="80"
+            android:background="@drawable/round_the_corner"
+            android:text="Multiplication" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/imageview_bg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wu"/>
+
+        <Button
+            android:id="@+id/amd"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="80"
+            android:background="@drawable/round_the_corner"
+            android:text="ASM" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/imageview_bg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/table"/>
+
+        <Button
+            android:id="@+id/table"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="80"
+            android:background="@drawable/round_the_corner"
+            android:text="Tables" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/imageview_bg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/formula"/>
+
+        <Button
+            android:id="@+id/formulaUsed"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"
+            android:layout_marginRight="10dp"
+            android:layout_weight="80"
+            android:background="@drawable/round_the_corner"
+            android:text="Use the formula" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

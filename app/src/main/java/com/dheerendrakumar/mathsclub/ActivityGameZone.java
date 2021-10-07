@@ -3,16 +3,40 @@ package com.dheerendrakumar.mathsclub;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ActivityGameZone extends AppCompatActivity {
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_zone);
+
+        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+        int m = sharedPreferences.getInt("gzs",0);
+
+        TextView score = findViewById(R.id.gzs);
+        TextView reset = findViewById(R.id.reset);
+
+        score.setText("Score : "+m);
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                score.setText("Score : 0");
+                sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+                sharedPreferences.edit().putInt("gzs",0).apply();
+            }
+        });
+
+
+
 
         ImageView greaterOrLess = findViewById(R.id.greaterOrLess);
         greaterOrLess.setOnClickListener(new View.OnClickListener() {
@@ -20,6 +44,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,GreaterSmaller.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -29,6 +54,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityMaxMin.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -38,6 +64,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityFindx.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -47,6 +74,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityRightWrong.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -56,6 +84,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityAscendingDescending.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -65,6 +94,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityGetSum.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -74,6 +104,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityChallengeFriend.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -83,6 +114,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityFillBlanks.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -92,6 +124,7 @@ public class ActivityGameZone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityGameZone.this,ActivityEquation.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
