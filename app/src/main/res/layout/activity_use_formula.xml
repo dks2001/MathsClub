@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:visibility="invisible"
             android:layout_marginBottom="309dp"
             android:background="@color/red"
@@ -53,14 +54,16 @@
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rtc"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -84,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="30s"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="40sp" />
 
             </LinearLayout>
@@ -98,8 +101,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end"
                     android:layout_marginTop="10dp"
+                    android:gravity="end"
                     android:orientation="vertical">
 
                     <ImageView
@@ -107,7 +110,7 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="19dp"
-                        android:background="@drawable/scores" />
+                        android:background="@drawable/tphy" />
 
 
                     <TextView
@@ -117,7 +120,7 @@
                         android:layout_marginEnd="15dp"
                         android:padding="10dp"
                         android:text="0/0"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="40sp" />
 
                 </LinearLayout>
@@ -139,7 +142,7 @@
                 android:text="10"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="40sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/values"
@@ -149,7 +152,7 @@
                 android:text="10"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="40sp" />
+                android:textSize="30sp" />
 
         </LinearLayout>
 
@@ -166,10 +169,13 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:textSize="40sp"
+                android:background="@color/red"
                 android:elevation="2dp"
                 android:onClick="chooseAnswer"
-                android:tag="0" />
+                android:tag="0"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/val2"
@@ -178,10 +184,13 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1"
-                android:textSize="40sp"
+                android:background="@color/red"
                 android:elevation="2dp"
                 android:onClick="chooseAnswer"
-                android:tag="1" />
+                android:tag="1"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
         </LinearLayout>
 
@@ -198,10 +207,13 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@color/red"
                 android:elevation="2dp"
-                android:textSize="40sp"
                 android:onClick="chooseAnswer"
-                android:tag="2" />
+                android:tag="2"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/val4"
@@ -210,10 +222,13 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1"
-                android:textSize="40sp"
+                android:background="@color/red"
                 android:elevation="2dp"
                 android:onClick="chooseAnswer"
-                android:tag="3" />
+                android:tag="3"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
         </LinearLayout>
 
@@ -221,11 +236,11 @@
             android:id="@+id/playAgainButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:onClick="playAgain"
             android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/round_the_corner"
+            android:onClick="playAgain"
             android:text="play again" />
 
 

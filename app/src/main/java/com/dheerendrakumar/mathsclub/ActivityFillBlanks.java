@@ -2,10 +2,14 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,15 +49,20 @@ public class ActivityFillBlanks extends AppCompatActivity {
     CountDownTimer countDownTimer;
     String answer = "";
     int pos;
-    String t = "";
+    String t = "60100";
     int i=0;
     SharedPreferences sharedPreferences;
     int s;
+    SoundPool soundPool;
+    int soundId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_blanks);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(ActivityFillBlanks.this, R.raw.click, 1);
 
         scoreTextView = findViewById(R.id.scoreTextView);
         timerTextView = findViewById(R.id.timerTextView);
@@ -155,7 +164,7 @@ public class ActivityFillBlanks extends AppCompatActivity {
                         });
 
                     }
-                },2000);
+                },500);
 
 
             }
@@ -163,6 +172,8 @@ public class ActivityFillBlanks extends AppCompatActivity {
     }
 
     public void chooseAnswer(View view) {
+
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
 
         Button button = (Button) view;
         if (answer.equals(button.getText().toString())) {

@@ -27,6 +27,7 @@
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +37,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rtc"
             android:orientation="horizontal">
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
@@ -52,7 +54,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="19dp"
                         android:layout_marginStart="5dp"
-                        android:background="@drawable/scores" />
+                        android:background="@drawable/tphy" />
 
 
                     <TextView
@@ -62,10 +64,55 @@
                         android:layout_marginEnd="15dp"
                         android:padding="10dp"
                         android:text="0/0"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="40sp" />
 
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/answer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="Answer"
+                        android:onClick="showHintAndAnswer"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="bottom"/>
+
+
+                    <TextView
+                        android:id="@+id/hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="Hint"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:onClick="showHintAndAnswer"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -80,8 +127,7 @@
             android:text="find the minimum :"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textSize="25sp" />
 
 
         <LinearLayout
@@ -107,6 +153,8 @@
                     android:layout_height="80dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:text="skip"
                     android:textSize="20sp" />
@@ -116,6 +164,8 @@
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:text="submit"
                     android:textSize="20sp" />
@@ -135,6 +185,8 @@
                     android:layout_height="80dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:text="skip"
                     android:textSize="20sp" />
@@ -146,6 +198,8 @@
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:text="submit"
+                    android:textColor="@color/white"
+                    android:background="@color/red"
                     android:textSize="20sp" />
 
             </LinearLayout>

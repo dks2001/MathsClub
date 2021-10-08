@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:visibility="invisible"
             android:layout_marginBottom="309dp"
             android:background="@color/red"
@@ -53,48 +54,21 @@
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/scores"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp" />
-
-
-        <TextView
-            android:id="@+id/scoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:padding="10dp"
-            android:text="0/0"
-            android:textColor="@color/black"
-            android:textSize="40sp" />
-
-        </LinearLayout>
 
         <GridLayout
             android:id="@+id/gridLayout2"
             android:layout_width="400dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timerll">
+            app:layout_constraintTop_toBottomOf="@+id/sumTextView">
 
             <Button
                 android:id="@+id/button0"
@@ -114,6 +88,7 @@
                 android:paddingBottom="10dp"
                 android:tag="0"
                 android:text="14"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 app:backgroundTint="@color/red" />
 
@@ -135,6 +110,7 @@
                 android:paddingBottom="10dp"
                 android:tag="1"
                 android:text="14"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 app:backgroundTint="@color/red" />
 
@@ -156,6 +132,7 @@
                 android:paddingBottom="10dp"
                 android:tag="2"
                 android:text="14"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 app:backgroundTint="@color/red" />
 
@@ -177,6 +154,7 @@
                 android:paddingBottom="10dp"
                 android:tag="3"
                 android:text="14"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 app:backgroundTint="@color/red" />
 
@@ -199,6 +177,7 @@
                 android:paddingBottom="10dp"
                 android:tag="4"
                 android:text="14"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 app:backgroundTint="@color/red" />
 
@@ -221,6 +200,7 @@
                 android:paddingBottom="10dp"
                 android:tag="5"
                 android:text="14"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 app:backgroundTint="@color/red" />
 
@@ -230,45 +210,92 @@
             android:id="@+id/sumTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="100dp"
             android:padding="15dp"
             android:text="31+ 7"
             android:textColor="@color/black"
             android:textSize="45dp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/ll" />
 
 
         <LinearLayout
-            android:id="@+id/timerll"
-            android:layout_width="wrap_content"
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:background="@drawable/rtc"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/timer"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp" />
+            <LinearLayout
+                android:id="@+id/timerll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/timerTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="30s"
-            android:textColor="@color/black"
-            android:textSize="40sp"/>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/timer" />
+
+                <TextView
+                    android:id="@+id/timerTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="30s"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/tphy" />
+
+
+                    <TextView
+                        android:id="@+id/scoreTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:padding="10dp"
+                        android:text="0/0"
+                        android:textColor="@color/white"
+                        android:textSize="40sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

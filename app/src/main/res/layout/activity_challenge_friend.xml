@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:visibility="invisible"
             android:layout_marginBottom="309dp"
             android:backgroundTint="@color/red"
@@ -48,11 +49,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rtc"
             android:orientation="horizontal">
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
@@ -63,7 +65,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="19dp"
-                    android:background="@drawable/scores" />
+                    android:background="@drawable/tphy" />
 
 
                 <TextView
@@ -73,8 +75,55 @@
                     android:layout_marginEnd="15dp"
                     android:padding="10dp"
                     android:text="0/0"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="40sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/answer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="Answer"
+                        android:onClick="showHintAndAnswer"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="bottom"/>
+
+
+                    <TextView
+                        android:id="@+id/hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:text="Hint"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:onClick="showHintAndAnswer"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+
 
             </LinearLayout>
 
@@ -85,12 +134,11 @@
             android:id="@+id/questiontxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:text="find the minimum :"
             android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:textAlignment="center"/>
 
@@ -130,19 +178,25 @@
 
                 <Button
                     android:id="@+id/skip"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="70dp"
                     android:text="skip"
-                    android:background="@drawable/round_the_corner"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:background="@color/red"
                     android:layout_marginEnd="20dp"
                     android:onClick="chooseAnswer"/>
 
                 <Button
                     android:id="@+id/submit"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="70dp"
                     android:text="submit"
-                    android:background="@drawable/round_the_corner"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"/>
 
             </LinearLayout>

@@ -2,6 +2,9 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -41,11 +45,19 @@ public class IdentifyAndCompute extends AppCompatActivity {
     Button val1,val2,val3,val4;
     SharedPreferences sharedPreferences;
     int s;
+    String showHint="";
+    TextView answer,hint;
+    SoundPool soundPool;
+    int soundId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_identify_and_compute);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(IdentifyAndCompute.this, R.raw.click, 1);
 
         sumTextView = findViewById(R.id.questiontxt);
         scoreTextView = findViewById(R.id.scoreTextView);
@@ -59,6 +71,9 @@ public class IdentifyAndCompute extends AppCompatActivity {
 
         goButton.setVisibility(View.VISIBLE);
         gameLayout.setVisibility(View.INVISIBLE);
+
+        answer = findViewById(R.id.answer);
+        hint = findViewById(R.id.hint);
 
         sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
         s = sharedPreferences.getInt("rs",0);
@@ -86,6 +101,7 @@ public class IdentifyAndCompute extends AppCompatActivity {
 
     public void chooseAnswer(View view) {
 
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
         Button button = (Button)view;
 
         if(button.getText().toString().equals("play again")) {
@@ -97,7 +113,7 @@ public class IdentifyAndCompute extends AppCompatActivity {
                 score++;
                 scoreTextView.setText(Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
             }
-            playAgainButton.setVisibility(View.VISIBLE);
+            //playAgainButton.setVisibility(View.VISIBLE);
             val1.setEnabled(false);
             val2.setEnabled(false);
             val3.setEnabled(false);
@@ -148,10 +164,12 @@ public class IdentifyAndCompute extends AppCompatActivity {
             if(sin==0) {
                 sumTextView.setText(rndm+" @ "+myRand);
                 correctAnswer = rndm*rndm-myRand*myRand;
+                showHint = rndm+" x "+rndm+" - "+myRand+" x "+myRand;
             } else {
 
                 sumTextView.setText(rndm+" $ "+myRand);
                 correctAnswer = rndm*rndm+myRand*myRand;
+                showHint = rndm+" x "+rndm+" + "+myRand+" x "+myRand;
             }
 
         } else {
@@ -163,10 +181,12 @@ public class IdentifyAndCompute extends AppCompatActivity {
             if(sin==0) {
                 sumTextView.setText(rndm+" @ "+myRand);
                 correctAnswer = rndm*rndm*rndm-myRand*myRand*myRand;
+                showHint = rndm+" x "+rndm+" x "+rndm+" - "+myRand+" x "+myRand+" x "+myRand;
             } else {
 
                 sumTextView.setText(rndm+" $ "+myRand);
                 correctAnswer = rndm*rndm*rndm+myRand*myRand*myRand;
+                showHint = rndm+" x "+rndm+" x "+rndm+" + "+myRand+" x "+myRand+" x "+myRand;
             }
         }
 
@@ -223,9 +243,66 @@ public class IdentifyAndCompute extends AppCompatActivity {
 
 
             }
-        },1000);
+        },500);
 
     }
 
+    public void showHintAndAnswer(View view) {
 
+        TextView textView = (TextView) view;
+        int id = textView.getId();
+
+        if(id == R.id.answer) {
+
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.hint_and_answer, null);
+            int width = LinearLayout.LayoutParams.MATCH_PARENT;
+            int height = LinearLayout.LayoutParams.MATCH_PARENT;
+            boolean focusable = true; // lets taps outside the popup also dismiss it
+            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+            TextView AOH = popupView.findViewById(R.id.AOH);
+            AOH.setText("Answer");
+
+            TextView showAnswer = popupView.findViewById(R.id.answerHint);
+            showAnswer.setText(correctAnswer+"");
+
+            ImageView close = (ImageView) popupView.findViewById(R.id.close);
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                }
+            });
+
+            popupWindow.showAtLocation(findViewById(R.id.ml), Gravity.CENTER, 0, 0);
+
+        } else {
+
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.hint_and_answer, null);
+            int width = LinearLayout.LayoutParams.MATCH_PARENT;
+            int height = LinearLayout.LayoutParams.MATCH_PARENT;
+            boolean focusable = true; // lets taps outside the popup also dismiss it
+            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+            TextView AOH = popupView.findViewById(R.id.AOH);
+            AOH.setText("Hint");
+
+            TextView showHintt = popupView.findViewById(R.id.answerHint);
+            showHintt.setText("Evaluate : \n"+showHint);
+
+            ImageView close = (ImageView) popupView.findViewById(R.id.close);
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                }
+            });
+
+            popupWindow.showAtLocation(findViewById(R.id.ml), Gravity.CENTER, 0, 0);
+
+        }
+
+    }
 }

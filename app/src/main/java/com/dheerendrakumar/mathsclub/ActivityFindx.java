@@ -2,6 +2,9 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -52,11 +55,16 @@ public class ActivityFindx extends AppCompatActivity {
     int i=0;
     SharedPreferences sharedPreferences;
     int s;
+    SoundPool soundPool;
+    int soundId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_findx);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(ActivityFindx.this, R.raw.click, 1);
 
         scoreTextView = findViewById(R.id.scoreTextView);
         timerTextView = findViewById(R.id.timerTextView);
@@ -160,7 +168,7 @@ public class ActivityFindx extends AppCompatActivity {
 
 
                     }
-                },2000);
+                },500);
 
 
             }
@@ -168,10 +176,11 @@ public class ActivityFindx extends AppCompatActivity {
     }
 
     public void chooseAnswer(View view) {
+
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
+
         if (Integer.toString(pos).equals(view.getTag().toString())) {
             score++;
-        } else {
-
         }
         numberOfQuestions++;
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));

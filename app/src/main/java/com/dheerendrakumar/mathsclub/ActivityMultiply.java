@@ -2,6 +2,9 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,11 +48,16 @@ public class ActivityMultiply extends AppCompatActivity {
     CountDownTimer countDownTimer;
     SharedPreferences sharedPreferences;
     int s;
+    SoundPool soundPool;
+    int soundId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiply);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(ActivityMultiply.this, R.raw.click, 1);
 
         sumTextView = findViewById(R.id.sumTextView);
         button0 = findViewById(R.id.button0);
@@ -157,12 +165,15 @@ public class ActivityMultiply extends AppCompatActivity {
 
 
                     }
-                },1000);
+                },500);
             }
         }.start();
     }
 
     public void chooseAnswer(View view) {
+
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
+
         if (Integer.toString(locationOfCorrectAnswer).equals(view.getTag().toString())) {
             score++;
         }

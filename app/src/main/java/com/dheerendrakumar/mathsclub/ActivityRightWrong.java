@@ -3,6 +3,9 @@ package com.dheerendrakumar.mathsclub;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.drm.DrmStore;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -49,11 +52,16 @@ public class ActivityRightWrong extends AppCompatActivity {
     int i=0;
     SharedPreferences sharedPreferences;
     int s;
+    SoundPool soundPool;
+    int soundId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_right_wrong);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(ActivityRightWrong.this, R.raw.click, 1);
 
         sumTextView = findViewById(R.id.expressionRightWrong);
         right = findViewById(R.id.rightImageView);
@@ -152,7 +160,7 @@ public class ActivityRightWrong extends AppCompatActivity {
                         });
 
                     }
-                },2000);
+                },500);
 
 
             }
@@ -160,12 +168,12 @@ public class ActivityRightWrong extends AppCompatActivity {
     }
 
     public void chooseAnswer(View view) {
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
+
         if (r==1 && view.getTag().toString().equals("true")) {
             score++;
         } else if(r==0 && view.getTag().toString().equals("false")){
             score++;
-        } else {
-
         }
         numberOfQuestions++;
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));

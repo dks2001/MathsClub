@@ -2,6 +2,9 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,11 +53,16 @@ public class UseFormula extends AppCompatActivity {
     int i=0;
     SharedPreferences sharedPreferences;
     int s;
+    SoundPool soundPool;
+    int soundId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_use_formula);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(UseFormula.this, R.raw.click, 1);
 
         scoreTextView = findViewById(R.id.scoreTextView);
         timerTextView = findViewById(R.id.timerTextView);
@@ -156,7 +164,7 @@ public class UseFormula extends AppCompatActivity {
                         });
 
                     }
-                },2000);
+                },500);
 
 
             }
@@ -164,6 +172,8 @@ public class UseFormula extends AppCompatActivity {
     }
 
     public void chooseAnswer(View view) {
+
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
 
         Button button = (Button)view;
 

@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:visibility="invisible"
             android:layout_marginBottom="309dp"
             android:background="@color/red"
@@ -53,14 +54,16 @@
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rtc"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -84,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="30s"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="40sp" />
 
             </LinearLayout>
@@ -98,8 +101,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end"
                     android:layout_marginTop="10dp"
+                    android:gravity="end"
                     android:orientation="vertical">
 
                     <ImageView
@@ -107,7 +110,7 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="19dp"
-                        android:background="@drawable/scores" />
+                        android:background="@drawable/tphy" />
 
 
                     <TextView
@@ -117,7 +120,7 @@
                         android:layout_marginEnd="15dp"
                         android:padding="10dp"
                         android:text="0/0"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="40sp" />
 
                 </LinearLayout>
@@ -130,14 +133,13 @@
             android:id="@+id/questiontxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="find the minimum in:"
-            android:layout_marginTop="90dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="10dp"
-            android:textStyle="bold"
+            android:text="find the minimum in:"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textAlignment="center"/>
+            android:textSize="30sp"/>
 
 
         <LinearLayout
@@ -145,177 +147,192 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:gravity="bottom"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button0"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="0"
-                android:text="14"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button0"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="0"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="1"
-                android:layout_marginEnd="10dp"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="1"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="2"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="2"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="3"
-                android:layout_marginEnd="10dp"
-                android:text="14"
-                android:layout_weight="1"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="3"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="4"
-                android:layout_marginEnd="10dp"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="4"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="5"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="5"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="6"
-                android:layout_marginEnd="10dp"
-                android:text="14"
-                android:layout_weight="1"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="6"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="7"
-                android:layout_marginEnd="10dp"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="7"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="8"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="8"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="9"
-                android:text="14"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="9"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="10"
-                android:text="14"
-                android:layout_marginEnd="10dp"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="10"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:onClick="chooseAnswer"
-                android:tag="11"
-                android:text="14"
-                android:textSize="40sp"
-                app:backgroundTint="@color/red" />
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="chooseAnswer"
+                    android:tag="11"
+                    android:text="14"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/red" />
 
             </LinearLayout>
 

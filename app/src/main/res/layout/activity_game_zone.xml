@@ -11,16 +11,19 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:background="@drawable/mathsbg"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:background="#263238"
                 android:orientation="horizontal">
 
                 <TextView
@@ -31,8 +34,12 @@
                     android:textAlignment="center"
                     android:gravity="center"
                     android:textSize="30sp"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:shadowColor="@color/black"
                     android:padding="10dp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:layout_marginStart="5dp"/>
 
@@ -40,14 +47,17 @@
                     android:id="@+id/reset"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textAlignment="textEnd"
+                    android:gravity="end"
                     android:text="Reset"
                     android:textSize="30sp"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:shadowColor="@color/black"
                     android:padding="10dp"
                     android:textStyle="bold"
                     android:layout_marginEnd="5dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/white"/>
 
 
             </LinearLayout>

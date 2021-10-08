@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:layout_marginBottom="309dp"
             android:background="@color/red"
             android:padding="10dp"
@@ -60,6 +61,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rtc"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -83,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="30s"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="40sp" />
 
             </LinearLayout>
@@ -106,7 +108,7 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="19dp"
-                        android:background="@drawable/scores" />
+                        android:background="@drawable/tphy" />
 
 
                     <TextView
@@ -116,7 +118,7 @@
                         android:layout_marginEnd="15dp"
                         android:padding="10dp"
                         android:text="0/0"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="40sp" />
 
                 </LinearLayout>
@@ -165,7 +167,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/round_the_corner"
+                android:background="@color/red"
                 android:elevation="2dp"
                 android:onClick="chooseAnswer"
                 android:src="@drawable/greaterzone"
@@ -178,7 +180,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1"
-                android:background="@drawable/round_the_corner"
+                android:background="@color/red"
                 android:elevation="2dp"
                 android:onClick="chooseAnswer"
                 android:src="@drawable/less"

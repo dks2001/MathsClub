@@ -2,16 +2,21 @@ package com.dheerendrakumar.mathsclub;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -43,11 +48,18 @@ public class InterchangeTheSign extends AppCompatActivity {
     Button val4;
     SharedPreferences sharedPreferences;
     int s;
+    TextView answer,hint;
+    String showHint="";
+    SoundPool soundPool;
+    int soundId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interchange_the_sign);
+
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        soundId = soundPool.load(InterchangeTheSign.this, R.raw.click, 1);
 
         sumTextView = findViewById(R.id.questiontxt);
         scoreTextView = findViewById(R.id.scoreTextView);
@@ -61,6 +73,9 @@ public class InterchangeTheSign extends AppCompatActivity {
 
         goButton.setVisibility(View.VISIBLE);
         gameLayout.setVisibility(View.INVISIBLE);
+
+        answer = findViewById(R.id.answer);
+        hint = findViewById(R.id.hint);
 
         sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
         s = sharedPreferences.getInt("rs",0);
@@ -91,6 +106,7 @@ public class InterchangeTheSign extends AppCompatActivity {
 
     public void chooseAnswer(View view) {
 
+        soundPool.play(soundId, 1, 1, 0, 0, 1);
         Button button = (Button)view;
 
         if(button.getText().toString().equals("play again")) {
@@ -103,7 +119,7 @@ public class InterchangeTheSign extends AppCompatActivity {
                 scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
 
             }
-            playAgainButton.setVisibility(View.VISIBLE);
+            //playAgainButton.setVisibility(View.VISIBLE);
             val1.setEnabled(false);
             val2.setEnabled(false);
             val3.setEnabled(false);
@@ -159,31 +175,36 @@ public class InterchangeTheSign extends AppCompatActivity {
 
         if(s1.equals("-") && s2.equals("+")) {
 
-            sumTextView.setText("Interchange the signs.\n"+a+"-"+b+"+"+c);
+            sumTextView.setText("Interchange the signs.\n"+a+" - "+b+" + "+c);
             correctAnswer = a+b-c;
+            showHint = a+" + "+b+" - "+c;
 
         } else if(s1.equals("+") && s2.equals("*")) {
 
-            sumTextView.setText("Interchange the signs.\n"+a+"*"+b+"+"+c);
+            sumTextView.setText("Interchange the signs.\n"+a+" x "+b+" + "+c);
             correctAnswer = a*b+c;
-
+            showHint = a+" x "+"b"+" + "+c;
         } else if(s1.equals("-") && s2.equals("*")){
-            sumTextView.setText("Interchange the signs.\n"+a+"-"+b+"*"+c);
+            sumTextView.setText("Interchange the signs.\n"+a+" - "+b+" x "+c);
             correctAnswer = a*b-c;
+            showHint = a+" x "+b+" - "+c;
 
         } else if(s1.equals("+") && s2.equals("-")) {
 
-            sumTextView.setText("Interchange the signs.\n"+a+"+"+b+"-"+c);
+            sumTextView.setText("Interchange the signs.\n"+a+" + "+b+" - "+c);
             correctAnswer = a-b+c;
+            showHint = a+" - "+b+" + "+c;
 
         } else if(s1.equals("*") && s2.equals("+")) {
 
-            sumTextView.setText("Interchange the signs.\n"+a+"*"+b+"+"+c);
+            sumTextView.setText("Interchange the signs.\n"+a+" x "+b+" + "+c);
             correctAnswer = a+b*c;
+            showHint = a+" + "+b+" x "+c;
 
         } else if(s1.equals("*") && s2.equals("-")) {
-            sumTextView.setText("Interchange the signs.\n"+a+"*"+b+"-"+c);
+            sumTextView.setText("Interchange the signs.\n"+a+" x "+b+" - "+c);
             correctAnswer = a-b*c;
+            showHint = a+" - "+b+" x "+c;
         }
 
         answers.add(correctAnswer);
@@ -237,10 +258,66 @@ public class InterchangeTheSign extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
-
             }
-        },1000);
+        },500);
+    }
+
+    public void showHintAndAnswer(View view) {
+
+        TextView textView = (TextView) view;
+        int id = textView.getId();
+
+        if(id == R.id.answer) {
+
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.hint_and_answer, null);
+            int width = LinearLayout.LayoutParams.MATCH_PARENT;
+            int height = LinearLayout.LayoutParams.MATCH_PARENT;
+            boolean focusable = true; // lets taps outside the popup also dismiss it
+            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+            TextView AOH = popupView.findViewById(R.id.AOH);
+            AOH.setText("Answer");
+
+            TextView showAnswer = popupView.findViewById(R.id.answerHint);
+            showAnswer.setText(correctAnswer+"");
+
+            ImageView close = (ImageView) popupView.findViewById(R.id.close);
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                }
+            });
+
+            popupWindow.showAtLocation(findViewById(R.id.ml), Gravity.CENTER, 0, 0);
+
+        } else {
+
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.hint_and_answer, null);
+            int width = LinearLayout.LayoutParams.MATCH_PARENT;
+            int height = LinearLayout.LayoutParams.MATCH_PARENT;
+            boolean focusable = true; // lets taps outside the popup also dismiss it
+            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+            TextView AOH = popupView.findViewById(R.id.AOH);
+            AOH.setText("Hint");
+
+            TextView showHintt = popupView.findViewById(R.id.answerHint);
+            showHintt.setText("Evaluate : "+showHint);
+
+            ImageView close = (ImageView) popupView.findViewById(R.id.close);
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                }
+            });
+
+            popupWindow.showAtLocation(findViewById(R.id.ml), Gravity.CENTER, 0, 0);
+
+        }
 
     }
 
