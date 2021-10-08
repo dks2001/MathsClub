@@ -156,15 +156,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button0"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
+                    android:background="@color/red"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
@@ -175,14 +177,15 @@
                     android:id="@+id/button1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="1"
                     android:text="14"
                     android:textColor="@color/white"
                     android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    app:backgroundTint="@color/red"
+                    android:background="@color/red"/>
 
                 <Button
                     android:id="@+id/button2"
@@ -194,13 +197,15 @@
                     android:text="14"
                     android:textColor="@color/white"
                     android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    app:backgroundTint="@color/red"
+                    android:background="@color/red"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
@@ -208,11 +213,12 @@
                     android:id="@+id/button3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="3"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:backgroundTint="@color/red" />
@@ -221,8 +227,9 @@
                     android:id="@+id/button4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="4"
                     android:text="14"
@@ -238,6 +245,7 @@
                     android:onClick="chooseAnswer"
                     android:tag="5"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:backgroundTint="@color/red" />
@@ -247,6 +255,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
@@ -254,10 +263,11 @@
                     android:id="@+id/button6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="6"
+                    android:background="@color/red"
                     android:text="14"
                     android:textColor="@color/white"
                     android:textSize="30sp"
@@ -267,11 +277,12 @@
                     android:id="@+id/button7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="7"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:backgroundTint="@color/red" />
@@ -284,6 +295,7 @@
                     android:onClick="chooseAnswer"
                     android:tag="8"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:backgroundTint="@color/red" />
@@ -300,11 +312,12 @@
                     android:id="@+id/button9"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="9"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:backgroundTint="@color/red" />
@@ -313,10 +326,11 @@
                     android:id="@+id/button10"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="10"
+                    android:background="@color/red"
                     android:text="14"
                     android:textColor="@color/white"
                     android:textSize="30sp"
@@ -330,6 +344,7 @@
                     android:onClick="chooseAnswer"
                     android:tag="11"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:backgroundTint="@color/red" />

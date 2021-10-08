@@ -161,8 +161,6 @@ public class ActivitySubtract extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(ActivitySubtract.this,WarmUp.class);
-                                startActivity(intent);
                             }
                         });
 

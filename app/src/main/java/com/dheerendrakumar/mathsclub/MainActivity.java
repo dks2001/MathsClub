@@ -89,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Math Club : Train the Brain");
-                    String shareMessage= "\nEnhance your knowledge and make new friends here only on QuizBOOk\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Maths Club");
+                    String shareMessage= "\nEnhance your knowledge of maths and reasoning only on Maths Club.\n\n";
                     shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-                    startActivity(Intent.createChooser(shareIntent, "choose one"));
+                    startActivity(Intent.createChooser(shareIntent, "Send Via..."));
                 } catch(Exception e) {
                     //e.toString();
                 }

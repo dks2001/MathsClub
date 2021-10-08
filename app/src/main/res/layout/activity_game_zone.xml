@@ -123,7 +123,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Solve the equation"
+                    android:text="Solve the equation."
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:shadowDx="5"
@@ -160,7 +160,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Maximum or Minimum?"
+                    android:text="Maximum or Minimum ?"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"
@@ -234,7 +234,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fill in the boxes"
+                    android:text="Fill in the boxes."
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:shadowDx="5"
@@ -393,7 +393,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Find x"
+                    android:text="Find x."
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"

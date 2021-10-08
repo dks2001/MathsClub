@@ -17,6 +17,7 @@ public class WarmUp extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SoundPool soundPool;
     int soundId;
+    TextView score;
 
 
     @Override
@@ -27,11 +28,8 @@ public class WarmUp extends AppCompatActivity {
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
         soundId = soundPool.load(WarmUp.this, R.raw.click, 1);
 
-        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-        int m = sharedPreferences.getInt("wus",0);
+        score = findViewById(R.id.wus);
 
-        TextView score = findViewById(R.id.wus);
-        score.setText("Score : "+m);
 
         TextView reset = findViewById(R.id.reset);
         reset.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +50,6 @@ public class WarmUp extends AppCompatActivity {
                 soundPool.play(soundId, 1, 1, 0, 0, 1);
                 Intent intent = new Intent(WarmUp.this,ActivityAddition.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -63,7 +60,6 @@ public class WarmUp extends AppCompatActivity {
                 soundPool.play(soundId, 1, 1, 0, 0, 1);
                 Intent intent = new Intent(WarmUp.this,ActivityMultiply.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -74,7 +70,6 @@ public class WarmUp extends AppCompatActivity {
                 soundPool.play(soundId, 1, 1, 0, 0, 1);
                 Intent intent = new Intent(WarmUp.this,ActivitySubtract.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -85,7 +80,6 @@ public class WarmUp extends AppCompatActivity {
                 soundPool.play(soundId, 1, 1, 0, 0, 1);
                 Intent intent = new Intent(WarmUp.this,ActivityASM.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -106,8 +100,16 @@ public class WarmUp extends AppCompatActivity {
                 soundPool.play(soundId, 1, 1, 0, 0, 1);
                 Intent intent = new Intent(WarmUp.this,UseFormula.class);
                 startActivity(intent);
-                finish();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+        int m = sharedPreferences.getInt("wus",0);
+        score.setText("Score : "+m);
     }
 }

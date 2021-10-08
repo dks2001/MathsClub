@@ -222,8 +222,6 @@ public class ActivityChallengeFriend extends AppCompatActivity {
                     public void onClick(View v) {
                         popupWindow.dismiss();
                         finish();
-                        Intent intent = new Intent(ActivityChallengeFriend.this,ActivityGameZone.class);
-                        startActivity(intent);
                     }
                 });
 

@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -32,14 +33,20 @@ public class ActivityTable extends AppCompatActivity {
         getTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrayList.clear();
 
-                int number = Integer.parseInt(tableOf.getText().toString());
+                if(tableOf.getText().toString().equals("")) {
+                    Toast.makeText(ActivityTable.this, "Enter a number.", Toast.LENGTH_SHORT).show();
+                } else {
+                    arrayList.clear();
 
-                for(int i=1;i<=10;i++) {
-                    arrayList.add(number+" "+" x "+i+" = "+number*i);
+                    int number = Integer.parseInt(tableOf.getText().toString());
+
+                    for(int i=1;i<=10;i++) {
+                        arrayList.add(number+" "+" x "+i+" = "+number*i);
+                    }
+                    listView.setAdapter(arrayAdapter);
                 }
-                listView.setAdapter(arrayAdapter);
+
             }
         });
     }

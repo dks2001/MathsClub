@@ -163,8 +163,6 @@ public class ActivityASM extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(ActivityASM.this,WarmUp.class);
-                                startActivity(intent);
                             }
                         });
 

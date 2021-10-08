@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp"
+            android:textColor="@color/white"
             android:text="get"
             android:textSize="18sp"
             app:backgroundTint="@color/red" />

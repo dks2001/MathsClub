@@ -176,9 +176,6 @@ public class ActivityGetSum extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-
-                                Intent intent = new Intent(ActivityGetSum.this,ActivityGameZone.class);
-                                startActivity(intent);
                             }
                         });
 

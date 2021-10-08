@@ -158,8 +158,6 @@ public class ActivityMultiply extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(ActivityMultiply.this,WarmUp.class);
-                                startActivity(intent);
                             }
                         });
 

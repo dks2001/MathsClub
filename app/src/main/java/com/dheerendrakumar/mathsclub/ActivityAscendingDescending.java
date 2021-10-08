@@ -168,8 +168,6 @@ public class ActivityAscendingDescending extends AppCompatActivity {
                                 popupWindow.dismiss();
                                 finish();
 
-                                Intent intent = new Intent(ActivityAscendingDescending.this,ActivityGameZone.class);
-                                startActivity(intent);
                             }
                         });
 
@@ -253,7 +251,7 @@ public class ActivityAscendingDescending extends AppCompatActivity {
         int b = rand.nextInt(100);
         String maxOrmin = arr[rndm];
 
-        sumTextView.setText("Find the "+ maxOrmin+":");
+        sumTextView.setText("Arrange in "+ maxOrmin+":");
 
         answers.clear();
         userAnswer.clear();

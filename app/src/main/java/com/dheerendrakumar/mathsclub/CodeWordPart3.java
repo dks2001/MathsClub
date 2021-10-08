@@ -244,7 +244,7 @@ public class CodeWordPart3 extends AppCompatActivity {
 
         Log.i("ans2",ans2);
 
-        sumTextView.setText("if "+ ques1+" is coded as '"+ans1+"'. How can '"+ques2+"' be coded?");
+        sumTextView.setText("if '"+ ques1+"' is coded as '"+ans1+"'. How can '"+ques2+"' be coded?");
 
     }
 
@@ -278,8 +278,6 @@ public class CodeWordPart3 extends AppCompatActivity {
                     public void onClick(View v) {
                         popupWindow.dismiss();
                         finish();
-                        Intent intent = new Intent(CodeWordPart3.this,ActivityReasoning.class);
-                        startActivity(intent);
                     }
                 });
 

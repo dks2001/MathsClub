@@ -29,7 +29,7 @@ import java.util.Random;
 
 public class UseFormula extends AppCompatActivity {
 
-    String[] formulas = {"lb+bh+hl","lbh","a^2+b^2","l(b+h)"};
+    String[] formulas = {"lb+bh+hl","lxbxh","a^2+b^2","lx(b+h)"};
 
     ArrayList<Integer> answers = new ArrayList<>();
     Button goButton;
@@ -158,8 +158,6 @@ public class UseFormula extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(UseFormula.this,WarmUp.class);
-                                startActivity(intent);
                             }
                         });
 

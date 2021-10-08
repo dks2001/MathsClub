@@ -153,9 +153,6 @@ public class ActivityRightWrong extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-
-                                Intent intent = new Intent(ActivityRightWrong.this,ActivityGameZone.class);
-                                startActivity(intent);
                             }
                         });
 

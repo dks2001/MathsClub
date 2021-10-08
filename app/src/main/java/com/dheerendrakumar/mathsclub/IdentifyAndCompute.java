@@ -179,12 +179,12 @@ public class IdentifyAndCompute extends AppCompatActivity {
             int sin = rand.nextInt(2);
 
             if(sin==0) {
-                sumTextView.setText(rndm+" @ "+myRand);
+                sumTextView.setText(rndm+" @ "+myRand+" = ?");
                 correctAnswer = rndm*rndm*rndm-myRand*myRand*myRand;
                 showHint = rndm+" x "+rndm+" x "+rndm+" - "+myRand+" x "+myRand+" x "+myRand;
             } else {
 
-                sumTextView.setText(rndm+" $ "+myRand);
+                sumTextView.setText(rndm+" $ "+myRand+" = ?");
                 correctAnswer = rndm*rndm*rndm+myRand*myRand*myRand;
                 showHint = rndm+" x "+rndm+" x "+rndm+" + "+myRand+" x "+myRand+" x "+myRand;
             }
@@ -236,8 +236,6 @@ public class IdentifyAndCompute extends AppCompatActivity {
                     public void onClick(View v) {
                         popupWindow.dismiss();
                         finish();
-                        Intent intent = new Intent(IdentifyAndCompute.this,ActivityReasoning.class);
-                        startActivity(intent);
                     }
                 });
 

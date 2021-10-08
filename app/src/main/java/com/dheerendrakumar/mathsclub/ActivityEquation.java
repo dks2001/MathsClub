@@ -162,8 +162,6 @@ public class ActivityEquation extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(ActivityEquation.this,ActivityGameZone.class);
-                                startActivity(intent);
                             }
                         });
 

@@ -156,8 +156,6 @@ public class GreaterSmaller extends AppCompatActivity {
 
                                         popupWindow.dismiss();
                                         finish();
-                                        Intent intent = new Intent(GreaterSmaller.this,ActivityGameZone.class);
-                                        startActivity(intent);
 
                                     }
                                 });

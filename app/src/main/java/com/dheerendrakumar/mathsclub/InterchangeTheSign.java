@@ -254,8 +254,6 @@ public class InterchangeTheSign extends AppCompatActivity {
                     public void onClick(View v) {
                         popupWindow.dismiss();
                         finish();
-                        Intent intent = new Intent(InterchangeTheSign.this,ActivityReasoning.class);
-                        startActivity(intent);
                     }
                 });
             }

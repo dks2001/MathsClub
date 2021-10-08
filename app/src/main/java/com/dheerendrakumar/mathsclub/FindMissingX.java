@@ -185,9 +185,9 @@ public class FindMissingX extends AppCompatActivity {
 
         for(int i=0;i<5;i++) {
             if(ca==i) {
-                ans += " __ ";
+                ans += " __ ,";
             } else {
-                ans += answers.get(i)+" ";
+                ans += answers.get(i)+", ";
             }
         }
 
@@ -247,8 +247,6 @@ public class FindMissingX extends AppCompatActivity {
                     public void onClick(View v) {
                         popupWindow.dismiss();
                         finish();
-                        Intent intent = new Intent(FindMissingX.this,ActivityReasoning.class);
-                        startActivity(intent);
                     }
                 });
 

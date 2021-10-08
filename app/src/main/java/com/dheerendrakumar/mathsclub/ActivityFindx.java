@@ -161,8 +161,6 @@ public class ActivityFindx extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(ActivityFindx.this,ActivityGameZone.class);
-                                startActivity(intent);
                             }
                         });
 

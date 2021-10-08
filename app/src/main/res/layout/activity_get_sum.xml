@@ -147,189 +147,195 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:gravity="bottom"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button0"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="0"
+                    android:background="@color/red"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp"/>
 
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button5"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button8"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button10"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
                 <Button
                     android:id="@+id/button11"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="40sp" />
 
             </LinearLayout>
 

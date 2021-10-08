@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class ActivityGameZone extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
+    TextView score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +22,8 @@ public class ActivityGameZone extends AppCompatActivity {
 
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.click);
 
-        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-        int m = sharedPreferences.getInt("gzs",0);
-
-        TextView score = findViewById(R.id.gzs);
+        score = findViewById(R.id.gzs);
         TextView reset = findViewById(R.id.reset);
-
-        score.setText("Score : "+m);
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +45,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,GreaterSmaller.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -60,7 +55,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityMaxMin.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -71,7 +65,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityFindx.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -82,7 +75,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityRightWrong.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -93,7 +85,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityAscendingDescending.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -104,7 +95,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityGetSum.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -115,7 +105,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityChallengeFriend.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -126,7 +115,6 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityFillBlanks.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -137,8 +125,16 @@ public class ActivityGameZone extends AppCompatActivity {
                 mp.start();
                 Intent intent = new Intent(ActivityGameZone.this,ActivityEquation.class);
                 startActivity(intent);
-                finish();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+        int m = sharedPreferences.getInt("gzs",0);
+        score.setText("Score : "+m);
+
     }
 }

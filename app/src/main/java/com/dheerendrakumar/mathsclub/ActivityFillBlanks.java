@@ -158,8 +158,6 @@ public class ActivityFillBlanks extends AppCompatActivity {
                             public void onClick(View v) {
                                 popupWindow.dismiss();
                                 finish();
-                                Intent intent = new Intent(ActivityFillBlanks.this,ActivityGameZone.class);
-                                startActivity(intent);
                             }
                         });
 

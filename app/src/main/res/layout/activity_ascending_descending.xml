@@ -139,7 +139,7 @@
             android:text="find the minimum in:"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
 
 
         <LinearLayout
@@ -160,11 +160,12 @@
                     android:id="@+id/button0"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/red"
+                    android:layout_marginBottom="5dp"
                     android:onClick="chooseAnswer"
                     android:tag="0"
+                    android:background="@color/red"
                     android:text="14"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
@@ -173,14 +174,15 @@
                     android:id="@+id/button1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
+                    android:background="@color/red"
+                    android:layout_marginBottom="5dp"
                     android:tag="0"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/button2"
@@ -189,10 +191,11 @@
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="0"
+                    android:background="@color/red"
+                    android:layout_marginBottom="5dp"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -205,27 +208,27 @@
                     android:id="@+id/button3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
                     android:tag="0"
+                    android:background="@color/red"
                     android:text="14"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/button5"
@@ -235,9 +238,9 @@
                     android:onClick="chooseAnswer"
                     android:tag="0"
                     android:text="14"
+                    android:background="@color/red"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
-                    app:backgroundTint="@color/red" />
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
