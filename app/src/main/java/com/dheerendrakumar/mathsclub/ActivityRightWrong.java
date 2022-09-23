@@ -128,6 +128,10 @@ public class ActivityRightWrong extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
+                        StoreScore ss = new StoreScore(numberOfQuestions,score,Integer.parseInt(t),"Is it right or wrong?","gameZone");
+                        ss.storescore();
+
                         LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                         View popupView = layoutInflater.inflate(R.layout.inflator, null);
                         int width = LinearLayout.LayoutParams.MATCH_PARENT;

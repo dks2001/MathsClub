@@ -2,6 +2,7 @@ package com.dheerendrakumar.mathsclub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,8 +35,8 @@ public class ActivityTable extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(tableOf.getText().toString().equals("")) {
-                    Toast.makeText(ActivityTable.this, "Enter a number.", Toast.LENGTH_SHORT).show();
+                if(Integer.parseInt(tableOf.getText().toString()) > 100) {
+                    Toast.makeText(ActivityTable.this, "Enter a number between 1 and 100", Toast.LENGTH_SHORT).show();
                 } else {
                     arrayList.clear();
 

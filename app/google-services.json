@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1037762003031",
+    "project_id": "maths-club-2a53e",
+    "storage_bucket": "maths-club-2a53e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037762003031:android:d71ba141e24ee32562a312",
+        "android_client_info": {
+          "package_name": "com.dheerendrakumar.mathsclub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037762003031-kt4gmfb5pv8v8ipoh2sun1mno3s3bvvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGFhIliWORlSu3TAjzvhVk2-Qvw6rvXss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037762003031-kt4gmfb5pv8v8ipoh2sun1mno3s3bvvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

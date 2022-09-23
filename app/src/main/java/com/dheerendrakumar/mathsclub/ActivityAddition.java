@@ -1,5 +1,6 @@
 package com.dheerendrakumar.mathsclub;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
@@ -24,6 +25,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 public class ActivityAddition extends AppCompatActivity {
 
@@ -136,6 +139,10 @@ public class ActivityAddition extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
+                        StoreScore ss = new StoreScore(numberOfQuestions,score,Integer.parseInt(t),"Addition", "warmUp");
+                        ss.storescore();
+
                         LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                         View popupView = layoutInflater.inflate(R.layout.inflator, null);
                         int width = LinearLayout.LayoutParams.MATCH_PARENT;
@@ -171,6 +178,11 @@ public class ActivityAddition extends AppCompatActivity {
         }.start();
     }
 
+//    private void storeScore(int numberOfQuestion, int score, String time, Context context) {
+//
+//
+//    }
+
     public void chooseAnswer(View view) {
 
         soundPool.play(soundId, 1, 1, 0, 0, 1);
@@ -205,10 +217,10 @@ public class ActivityAddition extends AppCompatActivity {
             if (i == locationOfCorrectAnswer) {
                 answers.add(a+b);
             } else {
-                int wrongAnswer = rand.nextInt(41);
+                int wrongAnswer = rand.nextInt(a+b)+20;
 
                 while (wrongAnswer == a+b) {
-                    wrongAnswer = rand.nextInt(41);
+                    wrongAnswer = rand.nextInt(a+b)+15;
                 }
 
                 answers.add(wrongAnswer);
@@ -230,5 +242,7 @@ public class ActivityAddition extends AppCompatActivity {
         if(i==1) {
             countDownTimer.cancel();
         }
+
+
     }
 }

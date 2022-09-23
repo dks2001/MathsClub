@@ -22,22 +22,6 @@ public class ActivityGameZone extends AppCompatActivity {
 
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.click);
 
-        score = findViewById(R.id.gzs);
-        TextView reset = findViewById(R.id.reset);
-
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mp.start();
-                score.setText("Score : 0");
-                sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-                sharedPreferences.edit().putInt("gzs",0).apply();
-            }
-        });
-
-
-
-
         ImageView greaterOrLess = findViewById(R.id.greaterOrLess);
         greaterOrLess.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,9 +116,7 @@ public class ActivityGameZone extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-        int m = sharedPreferences.getInt("gzs",0);
-        score.setText("Score : "+m);
+
 
     }
 }

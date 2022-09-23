@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="#032A34"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingLeft="15dp"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:text="Dashboard"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFFA9D"
+            app:cardCornerRadius="10dp"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="30px"
+            android:orientation="horizontal">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profiledash"
+                android:layout_width="80dp"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp"
+                android:padding="6dp"
+                android:layout_height="80dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/namedash"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:gravity="bottom"
+                    android:layout_weight="1"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/usernamedash"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+
+                    android:text=""/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalScore"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rank"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:background="#3F8797"
+                android:padding="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="27sp"
+                    android:textColor="@color/white"
+                    android:text="Rank"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"
+                    android:text="2343555"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/warmupHistory"
+                android:layout_width="match_parent"
+                android:background="@drawable/bg_1"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="30dp"
+                android:orientation="horizontal">
+
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:text="Warm Up"/>
+
+                <TextView
+                    android:id="@+id/warmupScoreShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"
+                    android:text="00"/>
+
+
+
+            </LinearLayout>
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/forward"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/gamezoneHistory"
+                android:layout_width="match_parent"
+                android:background="@drawable/bg_2"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="30dp"
+                android:orientation="horizontal">
+
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:text="Game Zone"/>
+
+                <TextView
+                    android:id="@+id/gameZoneScoreShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"
+                    android:text="00"/>
+
+
+
+            </LinearLayout>
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/forward"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/reasoningHistory"
+                android:layout_width="match_parent"
+                android:background="@drawable/bg_3"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="30dp"
+                android:orientation="horizontal">
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:text="Reasoning"/>
+
+                <TextView
+                    android:id="@+id/reasoningScoreShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"
+                    android:text="00"/>
+
+
+
+            </LinearLayout>
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/forward"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </ScrollView>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

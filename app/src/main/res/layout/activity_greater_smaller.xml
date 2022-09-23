@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="60s (Time in seconds)"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:paddingStart="10dp"
             android:paddingTop="5dp"
             android:paddingEnd="10dp"
@@ -73,8 +73,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/timer" />
@@ -104,8 +104,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="19dp"
                         android:background="@drawable/tphy" />

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dheerendrakumar.mathsclub">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,65 +13,115 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MathsClub">
-        <activity android:name=".WarmUp"
+        <activity android:name=".ActivityHistory"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".MyProfile"
             android:screenOrientation="portrait"/>
-        <activity android:name=".UseFormula"
+
+        <activity android:name=".Leaderboard"
             android:screenOrientation="portrait"/>
-        <activity android:name=".InterchangeTheSign"
+
+        <activity android:name=".Dashboard"
             android:screenOrientation="portrait"/>
-        <activity android:name=".InterchangeSign"
+
+        <activity android:name=".MyAccount"
             android:screenOrientation="portrait"/>
-        <activity android:name=".IdentifyAndCompute"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FindMissingX"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".NextInSeries"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CodeWordPart3"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CodeWordPart2"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CodeWordPart1"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityReasoning"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityEquation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityFillBlanks"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityChallengeFriend"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityAscendingDescending"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityGetSum"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityRightWrong"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityFindx"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityMaxMin"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".GreaterSmaller"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityGameZone"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityTable"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityASM"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityMultiply"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivitySubtract"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityAddition"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity">
+
+         <activity
+         android:name=".LoginActivity"
+         android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WarmUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UseFormula"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InterchangeTheSign"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InterchangeSign"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IdentifyAndCompute"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FindMissingX"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NextInSeries"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CodeWordPart3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CodeWordPart2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CodeWordPart1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityReasoning"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityEquation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityFillBlanks"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityChallengeFriend"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityAscendingDescending"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityGetSum"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityRightWrong"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityFindx"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityMaxMin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GreaterSmaller"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityGameZone"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityTable"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityASM"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityMultiply"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivitySubtract"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityAddition"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

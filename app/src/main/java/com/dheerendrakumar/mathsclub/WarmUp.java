@@ -28,20 +28,6 @@ public class WarmUp extends AppCompatActivity {
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
         soundId = soundPool.load(WarmUp.this, R.raw.click, 1);
 
-        score = findViewById(R.id.wus);
-
-
-        TextView reset = findViewById(R.id.reset);
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                soundPool.play(soundId, 1, 1, 0, 0, 1);
-                score.setText("Score : 0");
-                sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-                sharedPreferences.edit().putInt("wus",0).apply();
-
-            }
-        });
 
         Button addition  = findViewById(R.id.addition);
         addition.setOnClickListener(new View.OnClickListener() {
@@ -108,8 +94,5 @@ public class WarmUp extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-        int m = sharedPreferences.getInt("wus",0);
-        score.setText("Score : "+m);
     }
 }

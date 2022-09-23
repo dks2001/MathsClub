@@ -31,7 +31,6 @@ import java.util.Random;
 public class GreaterSmaller extends AppCompatActivity {
 
     String[] signs = {"+","-","*"};
-
     Button goButton;
     EditText timeEdt;
     Button playAgainButton;
@@ -130,6 +129,10 @@ public class GreaterSmaller extends AppCompatActivity {
                         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                             @Override
                             public void run() {
+
+                                StoreScore ss = new StoreScore(numberOfQuestions,score,Integer.parseInt(t),"Greater or Smaller","gameZone");
+                                ss.storescore();
+
                                 LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
                                 View popupView = layoutInflater.inflate(R.layout.inflator, null);
                                 int width = LinearLayout.LayoutParams.MATCH_PARENT;

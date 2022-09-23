@@ -142,6 +142,10 @@ public class ActivityAscendingDescending extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
+                        StoreScore ss = new StoreScore(numberOfQuestions,score,Integer.parseInt(t),"Ascending/Descending","gameZone");
+                        ss.storescore();
+
                         LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                         View popupView = layoutInflater.inflate(R.layout.inflator, null);
                         int width = LinearLayout.LayoutParams.MATCH_PARENT;
@@ -259,17 +263,17 @@ public class ActivityAscendingDescending extends AppCompatActivity {
 
 
         for(int i=0;i<3;i++) {
-            int m = a+i;
+            int m = a+rand.nextInt(20);
             while(answers.contains(m)) {
-                m = rand.nextInt(100);
+                m = a+rand.nextInt(10);
             }
             answers.add(m);
         }
 
         for(int j=0;j<3;j++) {
-            int m = b+j;
+            int m = b+rand.nextInt(20);
             while(answers.contains(m)) {
-                m = rand.nextInt(100);
+                m = b+rand.nextInt(10);
             }
             answers.add(m);
         }

@@ -40,65 +40,11 @@ public class MainActivity extends AppCompatActivity {
         maths.setY(-1000);
         maths.animate().translationY(0).setDuration(1000).alpha(1);
 
-         ImageView share = findViewById(R.id.share);
-         scores = findViewById(R.id.totalScore);
+
 
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
         soundId = soundPool.load(MainActivity.this, R.raw.click, 1);
 
-        ImageView install = findViewById(R.id.install);
-
-        install.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                i=1;
-
-                LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-                View popupView = layoutInflater.inflate(R.layout.install_inflator, null);
-                int width = LinearLayout.LayoutParams.MATCH_PARENT;
-                int height = LinearLayout.LayoutParams.MATCH_PARENT;
-                boolean focusable = false; // lets taps outside the popup also dismiss it
-                popupWindoww = new PopupWindow(popupView, width, height, focusable);
-
-                TextView installQuizBook = (TextView) popupView.findViewById(R.id.installQuizBook);
-                installQuizBook.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.dheerendrakumar.quiz")); /// here "yourpackegName" from your app packeg Name
-                        startActivity(intent);
-                    }
-                });
-
-                ImageView close = (ImageView) popupView.findViewById(R.id.close);
-                close.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popupWindoww.dismiss();
-                    }
-                });
-
-                popupWindoww.showAtLocation(findViewById(R.id.ml), Gravity.CENTER, 0, 0);
-
-            }
-        });
-
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                    shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Maths Club");
-                    String shareMessage= "\nEnhance your knowledge of maths and reasoning only on Maths Club.\n\n";
-                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-                    startActivity(Intent.createChooser(shareIntent, "Send Via..."));
-                } catch(Exception e) {
-                    //e.toString();
-                }
-            }
-        });
 
         Button table = findViewById(R.id.reasoning);
         table.setOnClickListener(new View.OnClickListener() {
@@ -129,17 +75,44 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView myAccount = findViewById(R.id.profile);
+        myAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MyAccount.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView dashboard = findViewById(R.id.dashboard);
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView leaderboard = findViewById(R.id.leaderboard);
+        leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Leaderboard.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
-        int m = sharedPreferences.getInt("wus",0);
-        int n = sharedPreferences.getInt("rs",0);
-        int o = sharedPreferences.getInt("gzs",0);
-        scores.setText(m+n+o+"");
+//        sharedPreferences = getApplicationContext().getSharedPreferences("Private Mode",MODE_PRIVATE);
+//        int m = sharedPreferences.getInt("wus",0);
+//        int n = sharedPreferences.getInt("rs",0);
+//        int o = sharedPreferences.getInt("gzs",0);
+//
     }
 
     @Override

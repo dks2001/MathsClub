@@ -133,6 +133,10 @@ public class ActivityMultiply extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
+                        StoreScore ss = new StoreScore(numberOfQuestions,score,Integer.parseInt(t),"Multiply","warmUp");
+                        ss.storescore();
+
                         LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                         View popupView = layoutInflater.inflate(R.layout.inflator, null);
                         int width = LinearLayout.LayoutParams.MATCH_PARENT;
@@ -203,10 +207,10 @@ public class ActivityMultiply extends AppCompatActivity {
             if (i == locationOfCorrectAnswer) {
                 answers.add(a*b);
             } else {
-                int wrongAnswer = rand.nextInt(41);
+                int wrongAnswer = (a*b)-rand.nextInt(10);
 
                 while (wrongAnswer == a*b) {
-                    wrongAnswer = rand.nextInt(41);
+                    wrongAnswer = (a*b)+rand.nextInt(10);
                 }
 
                 answers.add(wrongAnswer);

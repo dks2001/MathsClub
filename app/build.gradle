@@ -2,18 +2,23 @@ plugins {
     id 'com.android.application'
 }
 
+
+
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.dheerendraKumar.mathsclub"
-        minSdkVersion 17
+        applicationId "com.dheerendrakumar.mathsclub"
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    dexOptions{
+        javaMaxHeapSize "4g"
     }
 
     buildTypes {
@@ -36,4 +41,18 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.mikhaellopez:circularimageview:4.3.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation platform('com.google.firebase:firebase-bom:30.3.1')
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.squareup.picasso:picasso:2.6.0-SNAPSHOT'
 }
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
